@@ -38,3 +38,32 @@ for (let i = 1; i < biciclette.length; i++) {
 
 // Stampo a schermo la bici con il peso minore
 console.log("La bici più leggera è:", lightestBike);
+
+// snack2
+// Array di squadre
+var squadre = [
+  { nome: 'Juventus', punti: 0, falli: 0 },
+  { nome: 'Napoli', punti: 0, falli: 0 },
+  { nome: 'Roma', punti: 0, falli: 0 },
+  { nome: 'Inter', punti: 0, falli: 0 },
+  { nome: 'Milan', punti: 0, falli: 0 },
+];
+
+// Funzione per generare numeri casuali
+const generaNumeroCasuale = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+// Genero numeri casuali per punti e falli
+for (let i = 0; i < squadre.length; i++) {
+  squadre[i].punti = generaNumeroCasuale(1, 100);
+  squadre[i].falli = generaNumeroCasuale(1, 100);
+}
+
+// Creo un nuovo array con solo nomi e falli subiti
+const nomiFalli = squadre.map(squadra => ({
+  nome: squadra.nome,
+  falli: squadra.falli
+}));
+
+// Stampo tutto in console
+console.log("Squadre aggiornate:", squadre);
+console.log("Array con nomi e falli subiti:", nomiFalli);
